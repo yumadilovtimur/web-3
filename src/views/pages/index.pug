@@ -1,0 +1,47 @@
+extends ../auth.layout.pug
+
+block variables
+  - var title = 'Home page'
+
+block scripts
+  script(src='auth.bundle.js')
+
+block content
+  .wrapper.wrapper--bg-intro
+    .wrapper__video-bg
+      video.wrapper__html-video(width="100%", height="auto", preload="auto" loop="loop", muted="muted", autoplay="autoplay", poster="/assets/images/intro-bg.jpg")
+        source(src="/assets/images/night.mp4", type="video/mp4")
+        source(src="/assets/images/night.webm", type="video/webm")
+    .container
+      .intro
+        header.intro__header
+          button.intro__btn-autorization Авторизоваться
+        
+        article.about
+          .about__content
+            img.about__avatar(src="/assets/images/avatar.png", alt="Фотография Юмадилова Тимура")
+            h1.about__title Юмадилов Тимур
+            h2.about__subtitle Личный сайт веб-разработчика
+          
+          .socials
+            a.socials__social-btn.socials__social-btn--vk(href="https://vk.com/timur.yumadilov")
+              svg
+                use(xlink:href='/assets/images/icons/sprite.svg#vk')
+            a.socials__social-btn.socials__social-btn--github(href="https://github.com/yumadilovtimur")
+              svg
+                use(xlink:href='/assets/images/icons/sprite.svg#github')
+            a.socials__social-btn.socials__social-btn--in(href="https://ru.linkedin.com/")
+              svg
+                use(xlink:href='/assets/images/icons/sprite.svg#in')
+
+          .about__buttons
+            ul.about__list-buttons
+              li.about__list-buttons-item
+                a.about__link(href="works.html") Мои работы
+              li.about__list-buttons-item
+                a.about__link(href="about.html") Обо мне
+              li.about__list-buttons-item
+                a.about__link(href="blog.html") Блог
+
+        footer.intro__footer
+          p.intro__footer-content © Юмадилов Тимур | создано с любовью в LoftSchool | 2018

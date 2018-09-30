@@ -1,0 +1,243 @@
+.header-bg {
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/assets/images/bg.jpg");
+  position: relative;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  margin-bottom: 10px;
+  @include tablets {
+    margin-bottom: 40px;
+  }
+  @include phones {
+    padding-top: 0;
+    margin-bottom: 70px;
+  }
+}
+
+.header__menu-btn {
+  box-sizing: content-box;
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  height: 35px;
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+  @include phones {
+    width: 26px;
+    height: 23px;
+  }
+  &:hover .header__menu-btn-element {
+    background-color: #014ed2;
+    ;
+  }
+}
+
+.header__menu-btn-element {
+  width: 40px;
+  height: 5px;
+  background-color: #ffffff;
+  position: absolute;
+  border-radius: 2px;
+  transition-property: all;
+  transition-duration: 0.4s;
+  @include phones {
+    width: 26px;
+    height: 4px;
+  }
+  &:nth-child(1) {
+    top: 10px;
+  }
+  &:nth-child(2) {
+    top: 25px;
+    @include phones {
+      top: 20px;
+    }
+  }
+  &:nth-child(3) {
+    top: 40px;
+    @include phones {
+      top: 30px;
+    }
+  }
+}
+
+.header__content {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: contain;
+  background-image: url("/assets/images/blog-header-bg.png");
+  @include tablets {
+    margin-bottom: 70px;
+  }
+  @include phones {
+    margin-bottom: 0;
+  }
+}
+
+.header__content--for-page-about {
+  background-image: url("/assets/images/header-bg.png");
+  margin-bottom: 60px;
+  @include desktop {
+    margin-bottom: 110px;
+  }
+  @include tablets {
+    margin-bottom: 95px;
+  }
+  @include phones {
+    margin-bottom: 190px;
+  }
+}
+
+.header__avatar {
+  width: 141px;
+  height: 141px;
+  margin-bottom: 5px;
+  @include phones {
+    margin-bottom: 15px;
+  }
+}
+
+.header__title {
+  font-family: 'Sansus Webissimo', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #ffffff;
+  text-transform: uppercase;
+  line-height: 1.5;
+  font-size: 63px;
+  @include phones {
+    font-size: 35px;
+  }
+}
+
+.header__title--small {
+  line-height: 1.2;
+  text-transform: none;
+  font-size: 35px;
+  font-weight: 500;
+  @include phones {
+    font-size: 21px;
+    margin-bottom: 5px;
+  }
+}
+
+.header__text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #ffffff;
+  line-height: 1.5;
+  font-size: 16px;
+  @include phones {
+    font-size: 14px;
+  }
+}
+
+.header__arrow-down {
+  align-self: center;
+  display: none;
+  @include tablets {
+    display: block;
+  }
+  @include phones {
+    display: none;
+  }
+}
+
+.header__arrow-down--for-about-page {
+  display: block;
+  position: absolute;
+  bottom: 70px;
+  @include tablets {
+    display: block;
+    bottom: 50px;
+  }
+  @include phones {
+    display: block;
+  }
+}
+
+.header__arrow-down--for-works-page {
+  display: block;
+  position: absolute;
+  bottom: 225px;
+  @include tablets {
+    display: block;
+    bottom: 190px;
+  }
+  @include phones {
+    display: block;
+    bottom: 150px;
+  }
+}
+
+.header__arrow-down-link {
+  display: inline-block;
+  padding: 10px;
+  width: 26px;
+  height: 16px;
+  & svg {
+    fill: #ffffff;
+    transition-property: all;
+    transition-duration: 0.4s;
+    opacity: 0.7;
+    width: 26px;
+    height: 16px;
+  }
+  &:hover svg {
+    opacity: 1;
+  }
+}
+
+.header__works {
+  width: 100%;
+  background-color: rgba(13, 17, 32, 0.85);
+  padding: 5px 0;
+}
+
+.header__works-title {
+  background-image: url(/assets/images/stars.png);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: #ffffff;
+  display: block;
+  flex-basis: 47%;
+  font-family: Sansus Webissimo, sans-serif;
+  font-size: 63px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-right: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  padding: 50px 0;
+  z-index: 10;
+  @include tablets {
+    font-size: 48px;
+    padding: 40px 0;
+  }
+  @include phones {
+    font-size: 35px;
+    padding: 30px 0;
+  }
+}

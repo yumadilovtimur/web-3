@@ -1,0 +1,228 @@
+.blog-content {
+  position: relative;
+}
+
+.blog-content__bg {
+  background-color: #faf8f0;
+  padding-top: 55px;
+  padding-bottom: 300px;
+  @include desktop {
+    padding-top: 95px;
+  }
+  @include tablets {
+    padding-top: 55px;
+    padding-bottom: 290px;
+  }
+  @media (max-width: 650px) {
+    padding-bottom: 330px;
+  }
+  @media (max-width: 475px) {
+    padding-bottom: 350px;
+  }
+  @include bigphones {
+    padding-bottom: 390px;
+  }
+  @media (max-width: 350px) {
+    padding-bottom: 410px;
+  }
+  @include phones {
+    padding-top: 30px;
+    padding-bottom: 410px;
+  }
+}
+
+.blog-content__columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blog-content__menu {
+  flex-basis: 23%;
+  min-width: 163px;
+  max-width: 400px;
+  margin-right: 7.5%;
+  text-align: right;
+
+  @include tablets {
+    display: none;
+  }
+  @include phones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: -91%;
+    top: 0;
+    height: 100vh;
+    z-index: 20;
+    box-shadow: 1px 0 7px 0px #000000;
+    min-width: auto;
+    max-width: auto;
+    width: 90%;
+    background-color: #253468;
+  }
+}
+
+.blog-content__btn-menu-open {
+  display: none;
+  @include phones {
+    display: block;
+    box-sizing: content-box;
+      width: 45px;
+      height: 45px;
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      background-color: #253468;
+      z-index: 10;
+      border: none;
+      padding: 10px;
+  }
+}
+
+.blog-content__menu-list {
+  @include phones {
+    z-index: 20;
+  }
+}
+
+.blog-content__menu-list-item {
+  margin-bottom: 30px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.blog-content__link {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #455a64;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+  padding-right: 20px;
+  position: relative;
+  transition-property: all;
+  transition-duration: 0.4s;
+  &--active,
+  &:hover {
+    font-weight: bold;
+    color: #083c96;
+    @include phones {
+      color: #ffffff;
+    }
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background-color: #083c96;
+      height: 100%;
+      width: 3px;
+      @include phones {
+        display: none;
+      }
+    }
+  }
+  @include phones {
+    color: #ffffff;
+    padding-left: 20px;
+  }
+}
+
+.blog-content__articles {
+  flex-basis: 70%;
+  min-width: 495px;
+  max-width: 1218px;
+  @include tablets {
+    flex-basis: 100%;
+    width: 100%;
+    min-width: auto;
+    max-width: auto;
+  }
+}
+
+.blog-content__article {
+  margin-bottom: 140px;
+  position: relative;
+  width: 70%;
+  @include desktop {
+    width: 90%;
+  }
+  @include tablets {
+    width: 100%;
+    margin-bottom: 100px;
+  }
+  @include phones {
+    margin-bottom: 60px;
+  }
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: #e0dfd8;
+    position: absolute;
+    bottom: -72.5px;
+    @include tablets {
+      bottom: -52.5px;
+    }
+    @include phones {
+      bottom: -32.5px;
+    }
+  }
+  &:last-child {
+    margin-bottom: 0;
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.blog-content__title {
+  color: #474b57;
+  font-family: 'Sansus Webissimo', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 35px;
+  line-height: 1.2;
+  margin-bottom: 5px;
+  @include tablets {
+    font-size: 30px;
+  }
+  @include phones {
+    font-size: 21px;
+  }
+}
+
+.blog-content__date {
+  color: #7485b4;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 2.56;
+  display: block;
+  margin-bottom: 7px;
+  @include tablets {
+    font-size: 14px;
+  }
+}
+
+.blog-content__text {
+  color: #455a64;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.625;
+  @include tablets {
+    font-size: 14px;
+  }
+}

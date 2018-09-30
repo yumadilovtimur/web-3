@@ -1,0 +1,138 @@
+extends ../auth.layout.pug
+
+block variables
+  - var title = 'Блог'
+
+block scripts
+  script(src='works.bundle.js')
+  
+block scriptsInHead
+  script(src='https://api-maps.yandex.ru/2.1/?lang=ru_RU', type='text/javascript')
+
+
+block content
+  .wrapper
+    .header-bg
+      .container
+        .header
+          header.header__container
+            .socials
+              a.socials__social-btn.socials__social-btn--vk.socials__social-btn--vk-small(href="https://vk.com/timur.yumadilov")
+                svg
+                  use(xlink:href='/assets/images/icons/sprite.svg#vk')
+              a.socials__social-btn.socials__social-btn--github.socials__social-btn--github-small(href="https://github.com/yumadilovtimur")
+                svg
+                  use(xlink:href='/assets/images/icons/sprite.svg#github')
+              a.socials__social-btn.socials__social-btn--in.socials__social-btn--in-small(href="https://ru.linkedin.com/")
+                svg
+                  use(xlink:href='/assets/images/icons/sprite.svg#in')
+            button.header__menu-btn
+              .header__menu-btn-element
+              .header__menu-btn-element
+              .header__menu-btn-element
+          .header__content.header__content--for-page-about
+            img.header__avatar(src="/assets/images/avatar.png", alt="Фотография Юмадилова Тимура")
+            h1.header__title.header__title--small Юмадилов Тимур
+            span.header__text Личный сайт веб разработчика
+          .header__arrow-down.header__arrow-down--for-works-page
+            a.header__arrow-down-link(href="#")
+              svg
+                use(xlink:href='/assets/images/icons/sprite.svg#arrow_down')
+      .triangles.triangles--for-page-works
+            svg.traingle(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 1000 85', preserveAspectRatio='none')
+              polygon.left(points='0,0   0,86   500.8,86   500.8,75.5')
+              polygon.right(points='1000,0   1000,86   500,86   500,75.5')
+      .header__works
+        h1.header__works-title Мои работы
+
+    .works-bg
+      .container
+        section.works
+          .works__image-container
+          .works__desc
+            .works__desc-container
+              span.works__work-name Сайт школы онлайн образования
+              span.works__technologies HTML, CSS, JavaScript
+              a.works__btn-open-work(href="https://github.com") Посмотреть сайт 
+                svg
+                  use(xlink:href='/assets/images/icons/sprite.svg#link')
+          button.works__btn-left
+            svg
+              use(xlink:href='/assets/images/icons/sprite.svg#portf_arrow_down')
+          button.works__btn-right
+            svg
+              use(xlink:href='/assets/images/icons/sprite.svg#portf_arrow_down')
+          ul.works__pagination-list
+            li.works__pagination-item
+              button.works__btn-pagintaion
+                .works__btn-pagintaion-circle
+            li.works__pagination-item
+              button.works__btn-pagintaion
+                .works__btn-pagintaion-circle
+            li.works__pagination-item
+              button.works__btn-pagintaion
+                .works__btn-pagintaion-circle
+            li.works__pagination-item
+              button.works__btn-pagintaion
+                .works__btn-pagintaion-circle
+
+    .reviews__bg
+      .container
+        section.reviews
+          h2.reviews__title Что обо мне говорят
+          ul.reviews__reviews-list
+            li.reviews__reviews-item.reviews__reviews-item--author-1
+              p.reviews__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+              span.reviews__author-name Ковальчук Дмитрий
+              span.reviews__author-desc — основатель Loftschool
+            li.reviews__reviews-item.reviews__reviews-item--author-2
+              p.reviews__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!
+              span.reviews__author-name Сабанцев Владимир
+              span.reviews__author-desc — преподаватель
+          .reviews__feedback
+            span.reviews__feedback-title Связаться со мной
+            form.reviews__form(action="mailto:t.yumadilov@mail.ru", method="POST")
+              input.reviews__input(type="text", name="name", required, placeholder="Имя")
+              input.reviews__input(type="email", name="email", required, placeholder="Ваш email")
+              textarea.reviews__input.reviews__input--textarea(name="comment", placeholder="Ваше сообщение")
+              button.reviews__submit(type="submit") Отправить
+              button.reviews__reset(type="reset") Очистить
+          .reviews__arrow-up
+            a.reviews__arrow-up-link(href="#")
+              svg
+                use(xlink:href='/assets/images/icons/sprite.svg#portf_arrow_up')
+
+      footer.footer
+        .footer-main-bg
+          .container
+            .footer__main
+              .footer__desc
+                p.footer__desc-text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+              .footer__links
+                ul.footer__list-links
+                  li.footer__links-item
+                    a.footer__link(href="works.html") Мои работы
+                  li.footer__links-item
+                    a.footer__link(href="about.html") Обо мне
+                  li.footer__links-item
+                    a.footer__link(href="blog.html") Блог
+                  li.footer__links-item
+                    a.footer__link(href="#") Авторизация
+                .socials.socials--left-position
+                  a.socials__social-btn.socials__social-btn--vk.socials__social-btn--left-padding-none.socials__social-btn--gray-fill(href="https://vk.com/timur.yumadilov")
+                    svg
+                      use(xlink:href='/assets/images/icons/sprite.svg#vk')
+                  a.socials__social-btn.socials__social-btn--github.socials__social-btn--gray-fill(href="https://github.com/yumadilovtimur")
+                    svg
+                      use(xlink:href='/assets/images/icons/sprite.svg#github')
+                  a.socials__social-btn.socials__social-btn--in.socials__social-btn--gray-fill(href="https://ru.linkedin.com/")
+                    svg
+                      use(xlink:href='/assets/images/icons/sprite.svg#in')
+              .footer__contacts
+                a.footer__email(href='mailto:t.yumadilov@mail.ru') t.yumadilov@mail.ru
+                a.footer__phone(href='tel:+7-996-401-50-02') +7-996-401-50-02
+                address.footer__address респ. Башкортостан, г. Уфа, ул. Юрия Гагарина, д. 3
+        .footer-copyright-bg
+          .container
+            .footer__copyright
+                p.footer__copyright-text © Юмадилов Тимур | Создано с любовью в LoftSchool | 2018

@@ -1,0 +1,121 @@
+extends ../auth.layout.pug
+
+block variables
+  - var title = 'Блог'
+
+block scripts
+  script(src='blog.bundle.js')
+
+block content
+  .wrapper
+    .header-bg
+      .container.container--blog-intro
+        .header
+          header.header__container
+            .socials
+              a.socials__social-btn.socials__social-btn--vk.socials__social-btn--vk-small(href="https://vk.com/timur.yumadilov")
+                svg
+                  use(xlink:href='/assets/images/icons/sprite.svg#vk')
+              a.socials__social-btn.socials__social-btn--github.socials__social-btn--github-small(href="https://github.com/yumadilovtimur")
+                svg
+                  use(xlink:href='/assets/images/icons/sprite.svg#github')
+              a.socials__social-btn.socials__social-btn--in.socials__social-btn--in-small(href="https://ru.linkedin.com/")
+                svg
+                  use(xlink:href='/assets/images/icons/sprite.svg#in')
+            button.header__menu-btn
+              .header__menu-btn-element
+              .header__menu-btn-element
+              .header__menu-btn-element
+          .header__content
+            img.header__avatar(src="/assets/images/avatar.png", alt="Фотография Юмадилова Тимура")
+            h1.header__title Блог
+            span.header__text Статьи, которые я написал
+          .header__arrow-down
+            a.header__arrow-down-link(href="#")
+              svg
+                use(xlink:href='/assets/images/icons/sprite.svg#arrow_down')
+      .triangles
+            svg.traingle(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 1000 85', preserveAspectRatio='none')
+              polygon.left(points='0,0   0,86   500.8,86   500.8,75.5')
+              polygon.right(points='1000,0   1000,86   500,86   500,75.5')
+
+      
+    .blog-content
+      .blog-content__bg
+        .container
+          .blog-content__columns
+            -
+                var articles = [ 
+                  {
+                    title: "Самое важное в SASS",
+                    id: "article1",
+                    date: "22 сентября 2018",
+                    body: "Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия. Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям."
+                  }, 
+                  {
+                    title: "Приёмы в вёрстке, без которых не обходится ни один сайт",
+                    id: "article2",
+                    date: "13 сентября 2018",
+                    body: "Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия. Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям."
+                  },
+                  {
+                    title: "Самый необходимый набор Gulp плагинов",
+                    id: "article3",
+                    date: "11 сентября 2018",
+                    body: "Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия. Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям."
+                  },
+                  {
+                    title: "Почему я выбрал Jade",
+                    id: "article4",
+                    date: "2 сентября 2018",
+                    body: "Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия. Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям."
+                  }
+                ];
+
+            aside.blog-content__menu
+              ul.blog-content__menu-list
+                each article, index in articles
+                  li.blog-content__menu-list-item
+                    a.blog-content__link(href=`#${article.id}`)= article.title
+              button.blog-content__btn-menu-open
+            main.blog-content__articles
+              each article, index in articles
+                article.blog-content__article(id=`${article.id}`)
+                  h2.blog-content__title= article.title
+                  time.blog-content__date= article.date
+                  p.blog-content__text= article.body
+
+      footer.footer
+        .footer-main-bg
+          .container
+            .footer__main
+              .footer__desc
+                p.footer__desc-text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+              .footer__links
+                ul.footer__list-links
+                  li.footer__links-item
+                    a.footer__link(href="works.html") Мои работы
+                  li.footer__links-item
+                    a.footer__link(href="about.html") Обо мне
+                  li.footer__links-item
+                    a.footer__link(href="blog.html") Блог
+                  li.footer__links-item
+                    a.footer__link(href="#") Авторизация
+                .socials.socials--left-position
+                  a.socials__social-btn.socials__social-btn--vk.socials__social-btn--left-padding-none.socials__social-btn--gray-fill(href="https://vk.com/timur.yumadilov")
+                    svg
+                      use(xlink:href='/assets/images/icons/sprite.svg#vk')
+                  a.socials__social-btn.socials__social-btn--github.socials__social-btn--gray-fill(href="https://github.com/yumadilovtimur")
+                    svg
+                      use(xlink:href='/assets/images/icons/sprite.svg#github')
+                  a.socials__social-btn.socials__social-btn--in.socials__social-btn--gray-fill(href="https://ru.linkedin.com/")
+                    svg
+                      use(xlink:href='/assets/images/icons/sprite.svg#in')
+              .footer__contacts
+                a.footer__email(href='mailto:t.yumadilov@mail.ru') t.yumadilov@mail.ru
+                a.footer__phone(href='tel:+7-996-401-50-02') +7-996-401-50-02
+                address.footer__address респ. Башкортостан, г. Уфа, ул. Юрия Гагарина, д. 3
+        .footer-copyright-bg
+          .container
+            .footer__copyright
+                p.footer__copyright-text © Юмадилов Тимур | Создано с любовью в LoftSchool | 2018

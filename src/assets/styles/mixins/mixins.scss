@@ -1,0 +1,29 @@
+@mixin retina {
+  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablets {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin bigphones {
+  @media (max-width: 420px) {
+    @content;
+  }
+}
+
+@mixin phones {
+  @media (max-width: 320px) {
+    @content;
+  }
+}
