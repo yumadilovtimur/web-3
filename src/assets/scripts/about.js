@@ -29,7 +29,7 @@ function yaMap() {
       },
         {
           iconLayout: 'default#image',
-          iconImageHref: '/assets/images/map-marker.png',
+          iconImageHref: './assets/images/map-marker.png',
           iconImageSize: [44, 60],
           iconImageOffset: [-22, -60]
         });
