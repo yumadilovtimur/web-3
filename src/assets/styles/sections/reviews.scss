@@ -1,5 +1,5 @@
 .reviews__bg {
-  background-image: url(/assets/images/reviews-bg.jpg);
+  background-image: url(./assets/images/reviews-bg.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -24,7 +24,7 @@
 }
 
 .reviews__title {
-  background-image: url(/assets/images/stars.png);
+  background-image: url(./assets/images/stars.png);
   background-position: top center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -79,7 +79,7 @@
     padding-top: 65px;
   }
   &--author-1 {
-    background-image: url(/assets/images/author-1.png), url(/assets/images/citate.png);
+    background-image: url(./assets/images/author-1.png), url(./assets/images/citate.png);
     margin-right: 25px;
     @include phones {
       margin-right: 0;
@@ -87,7 +87,7 @@
     }
   }
   &--author-2 {
-    background-image: url(/assets/images/author-2.png), url(/assets/images/citate.png);
+    background-image: url(./assets/images/author-2.png), url(./assets/images/citate.png);
   }
 }
 

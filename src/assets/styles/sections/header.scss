@@ -2,7 +2,7 @@
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("/assets/images/bg.jpg");
+  background-image: url("./assets/images/bg.jpg");
   position: relative;
 }
 
@@ -83,7 +83,7 @@
   background-repeat: no-repeat;
   width: 100%;
   background-size: contain;
-  background-image: url("/assets/images/blog-header-bg.png");
+  background-image: url("./assets/images/blog-header-bg.png");
   @include tablets {
     margin-bottom: 70px;
   }
@@ -93,7 +93,7 @@
 }
 
 .header__content--for-page-about {
-  background-image: url("/assets/images/header-bg.png");
+  background-image: url("./assets/images/header-bg.png");
   margin-bottom: 60px;
   @include desktop {
     margin-bottom: 110px;
@@ -214,7 +214,7 @@
 }
 
 .header__works-title {
-  background-image: url(/assets/images/stars.png);
+  background-image: url(./assets/images/stars.png);
   background-position: top center;
   background-repeat: no-repeat;
   background-size: contain;
