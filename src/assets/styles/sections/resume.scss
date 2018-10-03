@@ -290,13 +290,6 @@
     justify-content: center;
     align-items: center;
   }
-
-  & .resume__infographic-item:last-child {
-    margin-right: 0;
-    @include tablets {
-      margin-right: 30px;
-    }
-  }
 }
 
 .resume__infographic-item {
@@ -314,6 +307,8 @@
 
   @include tablets {
     margin-right: 30px;
+    margin-right: 20px;
+    margin-left: 20px;
   }
 
   &--no-margin-bottom {

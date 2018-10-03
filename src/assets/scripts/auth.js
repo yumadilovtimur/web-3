@@ -1,1 +1,4 @@
-console.log("auth module loaded");
+"use strict";
+
+var videoElement = document.getElementById('bg-video');
+videoElement ? videoElement.muted = true : null;

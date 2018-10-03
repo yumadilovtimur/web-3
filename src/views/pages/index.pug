@@ -9,7 +9,7 @@ block scripts
 block content
   .wrapper.wrapper--bg-intro
     .wrapper__video-bg
-      video.wrapper__html-video(width="100%", height="auto", preload="auto" loop="loop", muted="muted", autoplay="autoplay", poster="./assets/images/intro-bg.jpg")
+      video.wrapper__html-video(id="bg-video", width="100%", height="auto", preload="auto" loop="loop", muted="muted", autoplay="autoplay", src="./assets/images/night.mp4")
         source(src="./assets/images/night.mp4", type="video/mp4")
         source(src="./assets/images/night.webm", type="video/webm")
     .container
@@ -35,12 +35,9 @@ block content
                 use(xlink:href='./assets/images/icons/sprite.svg#in')
 
           .about__buttons
-            ul.about__list-buttons
-              li.about__list-buttons-item
+            nav.about__nav-buttons
                 a.about__link(href="works.html") Мои работы
-              li.about__list-buttons-item
                 a.about__link(href="about.html") Обо мне
-              li.about__list-buttons-item
                 a.about__link(href="blog.html") Блог
 
         footer.intro__footer

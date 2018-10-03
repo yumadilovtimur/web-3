@@ -14,6 +14,7 @@
   left: 0;
   bottom: 0;
   right: 0;
+  z-index: -5;
 }
 
 .wrapper__html-video {
@@ -28,21 +29,29 @@
 }
 
 .intro {
-  min-height: 100vh;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-}
-
-.intro__header {
-  align-self: flex-end;
   padding-top: 25px;
+  padding-bottom: 40px;
+
   @include tablets {
     padding-top: 20px;
   }
   @include phones {
     padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.intro__header {
+  align-self: flex-end;
+
+  @include phones {
     align-self: center;
   }
 }
@@ -59,6 +68,7 @@
   cursor: pointer;
   transition-property: all;
   transition-duration: 0.4s;
+  z-index: 20;
   &:hover {
     border: 1px solid transparent;
     background-color: #083c96;
@@ -73,8 +83,12 @@
   height: 395px;
   background-color: rgba(28, 31, 41, 0.5);
   position: relative;
+
   @include tablets {
     width: 350px;
+  }
+  @media (max-width: 380px) {
+    width: 92%;
   }
   @include phones {
     width: 300px;
@@ -119,19 +133,35 @@
   align-self: flex-end;
   position: absolute;
   bottom: 0;
+  width: 100%;
 }
 
-.about__list-buttons {
+.about__nav-buttons {
   display: flex;
+  width: 100%;
 }
 
-.about__list-buttons-item {
+.about__link {
   display: inline-block;
+  padding: 12px;
+  text-decoration: none;
+  background-color: #0548be;
+  color: #ffffff;
+  transition-property: all;
+  transition-duration: 0.4s;
+  text-align: center;
+  vertical-align: middle;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-style: normal;
   font-size: 16px;
   position: relative;
+  flex-grow: 1;
+
+  &:hover {
+    background-color: #093c97;
+  }
+
   &::before {
     content: "";
     display: block;
@@ -139,6 +169,7 @@
     width: 2px;
     background-color: #7296d3;
     position: absolute;
+    top: 0;
     right: -1px;
     z-index: 10;
   }
@@ -150,27 +181,7 @@
   }
 }
 
-.about__link {
-  display: inline-block;
-  padding: 12px 31.5683333px;
-  text-decoration: none;
-  background-color: #0548be;
-  color: #ffffff;
-  transition-property: all;
-  transition-duration: 0.4s;
-  &:hover {
-    background-color: #093c97;
-  }
-  @include tablets {
-    padding: 12px 26.5688333px;
-  }
-  @include phones {
-    padding: 12px 22.2041667px;
-  }
-}
-
 .intro__footer {
-  padding-bottom: 35px;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -179,6 +190,5 @@
   text-align: center;
   @include phones {
     font-size: 14px;
-    padding-bottom: 5px;
   }
 }

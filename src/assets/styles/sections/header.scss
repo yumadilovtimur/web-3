@@ -35,13 +35,16 @@
   padding: 10px;
   cursor: pointer;
   position: relative;
+
+  z-index: 20;
+
+
+  &--close {
+    z-index: 20;
+  }
   @include phones {
     width: 26px;
     height: 23px;
-  }
-  &:hover .header__menu-btn-element {
-    background-color: #014ed2;
-    ;
   }
 }
 
@@ -70,6 +73,26 @@
     top: 40px;
     @include phones {
       top: 30px;
+    }
+  }
+}
+
+.header__menu-btn-element--close {
+  &:nth-child(1) {
+    transform: rotate(45deg);
+    top: 25px;
+    @include phones {
+      top: 20px;
+    }
+  }
+  &:nth-child(2) {
+    opacity: 0;
+  }
+  &:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 25px;
+    @include phones {
+      top: 20px;
     }
   }
 }

@@ -24,7 +24,7 @@
 
 .about-contacts__content {
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 35px 20px;
@@ -37,7 +37,13 @@
   @include tablets {
     min-width: 320px;
   }
+  @media (max-width: 380px) {
+    width: 85%;
+    box-sizing: border-box;
+    top: 30%;
+  }
   @include phones {
+    box-sizing: content-box;
     top: 0;
     left: auto;
     transform: none;

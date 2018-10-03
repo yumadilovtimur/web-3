@@ -50,6 +50,7 @@ svg {
 .container {
   margin: 0 auto;
   max-width: 1740px;
+  height: 100%;
   padding: 0 1.7%;
   @include desktop {
     max-width: 1140px;
@@ -440,4 +441,86 @@ svg {
   @include tablets {
     font-size: 14px;
   }
+}
+
+.hambmenu {
+  padding-top: 250px;
+  padding-bottom: 100px;
+  background-color: rgba(24, 54, 105, 0.87);
+  min-width: 100%;
+  min-height: 100%;
+  height: auto;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: scroll;
+  transition-property: all;
+  transition-duration: 0.6s;
+  display: none;
+  opacity: 0;
+  @include tablets {
+    padding-top: 180px;
+  }
+  @include phones {
+    padding-top: 145px;
+  }
+}
+
+.hambmenu__nav {}
+
+.hambmenu__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hambmenu__list-item {
+  text-align: center;
+  font-size: 63px;
+  font-family: 'Sansus Webissimo', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  margin-bottom: 70px;
+  position: relative;
+  transition-property: all;
+  transition-duration: 0.6s;
+  @include tablets {
+    margin-bottom: 90px;
+    font-size: 49px;
+  }
+  @include phones {
+    margin-bottom: 50px;
+    font-size: 35px;
+  }
+  &::before {
+    transition-property: all;
+    transition-duration: 0.4s;
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: #ffffff;
+    bottom: -30px;
+    height: 3px;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -10px);
+    width: 90px;
+    opacity: 0;
+    @include phones {
+      width: 56px;
+      bottom: -20px;
+    }
+  }
+  &:hover::before {
+    opacity: 1;
+    transform: translate(-50%, 0px);
+  }
+}
+
+.hambmenu__link {
+  text-decoration: none;
+  color: #ffffff;
+  text-transform: uppercase;
 }
