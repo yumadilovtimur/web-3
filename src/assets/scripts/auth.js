@@ -1,20 +1,27 @@
 "use strict";
 
 // bg video
-var videoElement = document.getElementById('bg-video');
+function bgVideo() {
+  var videoElement = document.getElementById('bg-video');
 
-var windowWidth = Math.max(
-  document.body.scrollWidth, document.documentElement.scrollWidth, document.body.offsetWidth, document.documentElement.offsetWidth, document.body.clientWidth, document.documentElement.clientWidth
-);
+  var windowWidth = Math.max(
+    document.body.scrollWidth, document.documentElement.scrollWidth, document.body.offsetWidth, document.documentElement.offsetWidth, document.body.clientWidth, document.documentElement.clientWidth
+  );  
 
-if (windowWidth <= 768) {
-  videoElement.setAttribute("controls", "controls");
-  videoElement.play();
-  videoElement.addEventListener("canplaythrough", function(event) {
-
+  window.addEventListener("load", function (event) {
+    if (windowWidth <= 768) {
+      videoElement.setAttribute("controls", "controls");
+      videoElement.setAttribute("muted", "muted");
+      videoElement.controls = true;
+      videoElement.loop = true;
+      videoElement.muted = true;
+      videoElement.preload = "auto";
+      videoElement.play();
+    }
   });
 }
 
+bgVideo();
 
 // 3D card
 function card3D() {
@@ -23,7 +30,7 @@ function card3D() {
   const backCard = document.querySelector(".about__back");
   const btnOnIndex = document.querySelector(".about__link-on-intro");
 
-  btnOpen.addEventListener("click", function(event) {
+  btnOpen.addEventListener("click", function (event) {
     frontCard.classList.toggle("about__front--rotate");
     backCard.classList.toggle("about__back--rotate");
     if (frontCard.classList.contains("about__front--rotate") && backCard.classList.contains("about__back--rotate")) {
@@ -33,7 +40,7 @@ function card3D() {
     }
   });
 
-  btnOnIndex.addEventListener("click", function(event) {
+  btnOnIndex.addEventListener("click", function (event) {
     btnOpen.textContent = "Авторизоваться";
     frontCard.classList.remove("about__front--rotate");
     backCard.classList.remove("about__back--rotate");
