@@ -42,17 +42,18 @@
   max-width: 400px;
   margin-right: 7.5%;
   text-align: right;
+  position: relative;
+  transition-property: all;
+  transition-duration: 0.5s;
 
   @include tablets {
-    display: none;
-  }
-  @include phones {
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
-    left: -91%;
+    transform: translateX(-101%);
     top: 0;
+    left: 0;
     height: 100vh;
     z-index: 20;
     box-shadow: 1px 0 7px 0px #000000;
@@ -60,18 +61,22 @@
     max-width: auto;
     width: 90%;
     background-color: #253468;
+
+    &--open {
+      transform: translateX(0);
+    }
   }
 }
 
 .blog-content__btn-menu-open {
   display: none;
-  @include phones {
+  @include tablets {
     display: block;
     box-sizing: content-box;
       width: 45px;
       height: 45px;
       position: absolute;
-      right: -10px;
+      right: -15px;
       top: 50%;
       transform: translateY(-50%);
       border-radius: 50%;
@@ -80,10 +85,13 @@
       border: none;
       padding: 10px;
   }
+  @include phones {
+    right: -10px;
+  }
 }
 
 .blog-content__menu-list {
-  @include phones {
+  @include tablets {
     z-index: 20;
   }
 }
@@ -113,7 +121,7 @@
   &:hover {
     font-weight: bold;
     color: #083c96;
-    @include phones {
+    @include tablets {
       color: #ffffff;
     }
     &::before {
@@ -125,12 +133,12 @@
       background-color: #083c96;
       height: 100%;
       width: 3px;
-      @include phones {
+      @include tablets {
         display: none;
       }
     }
   }
-  @include phones {
+  @include tablets {
     color: #ffffff;
     padding-left: 20px;
   }
