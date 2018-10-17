@@ -9,10 +9,11 @@ block scripts
 block content
   .wrapper.wrapper--bg-intro
     .wrapper__video-bg
-      video.wrapper__html-video(id="bg-video", width="100%", height="auto", preload="auto", loop="loop", muted="muted", autoplay="autoplay", webkit-playsinline, playsinline)
+      video.wrapper__html-video(id="bg-video", width="100%", height="auto", preload="auto", loop="loop", muted="muted", autoplay="autoplay", poster="./assets/images/bg.jpg", autobuffer, webkit-playsinline, playsinline)
         source(src="./assets/images/night.mp4", type="video/mp4")
         source(src="./assets/images/night.ogv", type="video/ogg")
         source(src="./assets/images/night.webm", type="video/webm")
+        source(src="./assets/images/night.m4v")
     .container
       .intro
         header.intro__header

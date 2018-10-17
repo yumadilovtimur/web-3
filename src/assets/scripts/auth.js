@@ -6,7 +6,7 @@ function bgVideo() {
 
   var windowWidth = Math.max(
     document.body.scrollWidth, document.documentElement.scrollWidth, document.body.offsetWidth, document.documentElement.offsetWidth, document.body.clientWidth, document.documentElement.clientWidth
-  );  
+  );
 
   window.addEventListener("load", function (event) {
     if (windowWidth <= 768) {
@@ -17,6 +17,16 @@ function bgVideo() {
       videoElement.muted = true;
       videoElement.preload = "auto";
       videoElement.play();
+      document.body.addEventListener("touchstart", function (event) {
+        videoElement.play();
+      });
+      videoElement.addEventListener('loadeddata', function() {
+        videoElement.play();
+      });
+      videoElement.addEventListener('canplaythrough', function() {
+        videoElement.play();
+      });
+
     }
   });
 }
