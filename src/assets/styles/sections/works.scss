@@ -6,7 +6,6 @@
   padding-top: 100px;
   position: relative;
   width: 100%;
-  display: flex;
   min-height: 650px;
   @include desktop {
     padding-top: 90px;
@@ -32,13 +31,132 @@
   }
 }
 
+.works__slider-container {
+  width: 100%;
+  overflow: hidden;
+  min-height: 650px;
+  white-space: nowrap;
+  position: relative;
+  
+  @include desktop {
+    min-height: 500px;
+  }
+  @include tablets {
+    min-height: 950px;
+  }
+  @media (max-width: 580px) {
+    min-height: 800px;
+  }
+  @media (max-width: 450px) {
+    min-height: 700px;
+  }
+  @media (max-width: 360px) {
+    min-height: 600px;
+  }
+  @include phones {
+    min-height: 500px;
+  }
+}
+
+.works__slider-scroller {
+  width: 100%;
+  min-height: 650px;
+  white-space: nowrap;
+  position: absolute;
+  left: 0%;
+  transition-property: all;
+  transition-duration: 0.5s;
+  
+  @include desktop {
+    min-height: 500px;
+  }
+  @include tablets {
+    min-height: 950px;
+  }
+  @media (max-width: 580px) {
+    min-height: 800px;
+  }
+  @media (max-width: 450px) {
+    min-height: 700px;
+  }
+  @media (max-width: 360px) {
+    min-height: 600px;
+  }
+  @include phones {
+    min-height: 500px;
+  }
+}
+
+.works__slider-item-container {
+  display: inline-block;
+  width: 100%;
+  white-space: normal;
+  min-height: 650px;
+  vertical-align: bottom;
+  @include desktop {
+    min-height: 500px;
+  }
+  @include tablets {
+    min-height: 950px;
+  }
+  @media (max-width: 580px) {
+    min-height: 800px;
+  }
+  @media (max-width: 450px) {
+    min-height: 700px;
+  }
+  @media (max-width: 360px) {
+    min-height: 600px;
+  }
+  @include phones {
+    min-height: 500px;
+  }
+}
+
+.works__slider-item {
+  width: 100%;
+  min-height: 650px;
+  display: flex;
+  @include desktop {
+    min-height: 500px;
+  }
+  @include tablets {
+    min-height: 950px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  @media (max-width: 580px) {
+    min-height: 800px;
+  }
+  @media (max-width: 450px) {
+    min-height: 700px;
+  }
+  @media (max-width: 360px) {
+    min-height: 600px;
+  }
+  @include phones {
+    min-height: 500px;
+  }
+}
+
 .works__image-container {
   flex-basis: 45%;
   margin-left: auto;
-  background-image: url("./assets/images/work-1.png");
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: contain;
+  &--1 {
+    background-image: url("./assets/images/work-1.png");
+  }
+  &--2 {
+    background-image: url("./assets/images/work-2.png");
+  }
+  &--3 {
+    background-image: url("./assets/images/work-3.png");
+  }
+  &--4 {
+    background-image: url("./assets/images/work-4.png");
+  }
   @include tablets {
     order: 2;
     margin-left: 0;
@@ -222,15 +340,20 @@
   display: flex;
 }
 
-.works__pagination-item {}
-
 .works__btn-pagintaion {
   padding: 10px;
   background-color: transparent;
   cursor: pointer;
   display: inline-block;
   border: none;
+  
   &:hover .works__btn-pagintaion-circle {
+    background-color: rgba(0, 76, 209, 0.5);
+  }
+  &--active .works__btn-pagintaion-circle {
+    background-color: #004cd1;
+  }
+  &--active:hover .works__btn-pagintaion-circle {
     background-color: #004cd1;
   }
 }
@@ -241,4 +364,6 @@
   border-radius: 50%;
   width: 7px;
   height: 7px;
+  transition-property: all;
+  transition-duration: 0.5s;
 }

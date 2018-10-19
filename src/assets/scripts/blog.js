@@ -175,3 +175,20 @@ function arrowDown() {
 }
 
 arrowDown();
+
+// scroll-parallax
+function scrollParallax() {
+  const headerAvatar = document.querySelector(".header__avatar");
+  const headerTitle = document.querySelector(".header__title");
+  const headerText = document.querySelector(".header__text");
+
+  window.addEventListener("scroll", function(event) {
+    headerAvatar.style.transform = "translate3d(0, " + 
+    -(window.pageYOffset * 0.2) + "px, 0)";
+    headerTitle.style.transform = "translate3d(0, " + 
+    -(window.pageYOffset * 0.15) + "px, 0)";
+    headerText.style.transform = "translate3d(0, " + 
+    -(window.pageYOffset * 0.1) + "px, 0)";
+  });
+}
+scrollParallax();

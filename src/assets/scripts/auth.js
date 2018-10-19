@@ -1,5 +1,13 @@
 "use strict";
 
+var windowWidth = Math.max(
+  document.body.scrollWidth, document.documentElement.scrollWidth, document.body.offsetWidth, document.documentElement.offsetWidth, document.body.clientWidth, document.documentElement.clientWidth
+);
+
+var windowHeight = Math.max(
+  document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight
+);
+
 // bg video
 function bgVideo() {
   var videoElement = document.getElementById('bg-video');
@@ -10,27 +18,24 @@ function bgVideo() {
 
   window.addEventListener("load", function (event) {
     if (windowWidth <= 768) {
-      videoElement.setAttribute("controls", "controls");
       videoElement.setAttribute("muted", "muted");
-      videoElement.controls = true;
       videoElement.loop = true;
       videoElement.muted = true;
       videoElement.preload = "auto";
       videoElement.play();
-      document.body.addEventListener("touchstart", function (event) {
-        videoElement.play();
-      });
+
       videoElement.addEventListener('loadeddata', function() {
         videoElement.play();
       });
       videoElement.addEventListener('canplaythrough', function() {
         videoElement.play();
       });
-
+      videoElement.addEventListener('canplay', function() {
+        videoElement.play();
+      });
     }
   });
 }
-
 bgVideo();
 
 // 3D card
@@ -58,3 +63,26 @@ function card3D() {
 }
 card3D();
 
+// parallax mousemove
+function parallaxMove() {
+  const backgroundIntro = document.querySelector(".bg-intro");
+  const parallaxItem = document.querySelector(".bg-intro__container");
+  const parallaxImage = document.querySelector(".bg-intro__img");
+
+  window.addEventListener("mousemove", function(event) {
+    const centerX = (windowWidth / 2) - event.pageX;
+    const centerY = (windowHeight / 2) - event.pageY;
+
+    const positionX = centerX * 0.03;
+    const positionY = centerY * 0.03;
+    const bottomPosition = (windowHeight / 2) * 0.03;
+
+    parallaxItem.style.bottom = -bottomPosition + "px";
+
+    parallaxItem.style.transform = `translate(${positionX}px, ${positionY}px)`;
+  });
+}
+
+if (windowWidth > 768) {
+  parallaxMove();
+}

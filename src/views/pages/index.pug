@@ -7,13 +7,16 @@ block scripts
   script(src='auth.bundle.js')
 
 block content
-  .wrapper.wrapper--bg-intro
+  .wrapper.wrapper--intro
+    .bg-intro
+      .bg-intro__container
+        img.bg-intro__img(src="./assets/images/intro-bg.png", alt="background")
     .wrapper__video-bg
       video.wrapper__html-video(id="bg-video", width="100%", height="auto", preload="auto", loop="loop", muted="muted", autoplay="autoplay", poster="./assets/images/bg.jpg", autobuffer, webkit-playsinline, playsinline)
-        source(src="./assets/images/night.mp4", type="video/mp4")
-        source(src="./assets/images/night.ogv", type="video/ogg")
-        source(src="./assets/images/night.webm", type="video/webm")
-        source(src="./assets/images/night.m4v")
+        source(type="video/mp4", src="./assets/images/night.mp4")
+        source(type="video/webm", src="./assets/images/night.webm")
+        source(type="video/mp4", src="./assets/images/night.m4v")
+        source(type="video/ogg", src="./assets/images/night.ogv")
     .container
       .intro
         header.intro__header
